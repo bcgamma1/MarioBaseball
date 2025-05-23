@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Baseball Championship</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="menuOverlay">
+            <h1 class="menu-title">⚾ Arcade Baseball Championship ⚾</h1>
+            <div class="menu-content">
+                <button class="menu-button" onclick="game.startExhibition()">Exhibition Match</button>
+                <button class="menu-button" onclick="game.startTournament()">Tournament Mode</button>
+                <button class="menu-button" onclick="game.startHomeRunDerby()">Home Run Derby</button>
+                <button class="menu-button" onclick="game.showCharacterSelect()">Select Team</button>
+            </div>
+            <div class="difficulty-selector">
+                <label>Difficulty:</label>
+                <select id="difficulty" class="difficulty-select">
+                    <option value="rookie">Rookie</option>
+                    <option value="pro" selected>Pro</option>
+                    <option value="allstar">All-Star</option>
+                </select>
+            </div>
+        </div>
+        <div id="characterSelect" class="hidden">
+            <h2>Select Your Team (Choose 4)</h2>
+            <div id="characterGrid"></div>
+            <button class="menu-button" onclick="game.confirmTeam()">Confirm Team</button>
+        </div>
+        <div id="gameUI" class="hidden">
+            <div class="scoreboard">
+                <div class="team-score">
+                    <span class="team-name">HOME</span>
+                    <span class="score" id="homeScore">0</span>
+                </div>
+                <div class="inning-info">
+                    <span class="inning-number" id="inningNumber">1st</span>
+                    <span class="inning-half" id="inningHalf">TOP</span>
+                </div>
+                <div class="team-score">
+                    <span class="team-name">AWAY</span>
+                    <span class="score" id="awayScore">0</span>
+                </div>
+            </div>
+            <div class="game-status">
+                <div class="count">
+                    <span class="balls">Balls: <span id="balls">0</span></span>
+                    <span class="strikes">Strikes: <span id="strikes">0</span></span>
+                    <span class="outs">Outs: <span id="outs">0</span></span>
+                </div>
+                <div class="bases">
+                    <div class="base" id="base1"></div>
+                    <div class="base" id="base2"></div>
+                    <div class="base" id="base3"></div>
+                </div>
+            </div>
+            <div class="power-meter">
+                <div class="meter-fill" id="powerMeter"></div>
+            </div>
+            <div class="special-move-cooldown" id="specialCooldown">
+                Special Ready!
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/characters.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/powerups.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

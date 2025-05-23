@@ -1,0 +1,14 @@
+{
+  "name": "arcade-baseball-championship",
+  "version": "1.0.0",
+  "description": "An arcade-style baseball game inspired by Mario Superstar Baseball",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000 || python -m SimpleHTTPServer 8000",
+    "build": "echo 'No build required for static site'"
+  },
+  "keywords": ["baseball", "arcade", "game", "sports"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {}
+}
